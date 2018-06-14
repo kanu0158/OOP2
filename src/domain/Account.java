@@ -13,6 +13,12 @@ public class Account {
 	protected int money;// 잔액, 계좌 랜덤
 	protected String name,accountNo,uid,pass,accountType,createDate;//uid는 아이디 , createDate는 계좌생성일 블로그에서 오늘날짜 뽑는 로직 가져다쓰세요.
 	// 통장 123-345-678 의 형태가 되도록 코딩 math.random()이용해서
+	public Account() {
+		setAccountType(ACCOUNT_TYPE);
+		setAccountNo();
+		setCreateDate();
+	}
+	
 	public void setMoney(int money) {
 		this.money = money;
 	}
@@ -35,18 +41,15 @@ public class Account {
 	}
 	public void setPass(String pass) {
 		this.pass = pass;
-		setAccountType();
-		setAccountNo();
-		setCreateDate();
-		
 	}
-	public void setAccountType() {
-		this.accountType = ACCOUNT_TYPE;
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
 	}
 	public void setCreateDate() {
-		Date now = new Date();
+		/*Date now = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
-		createDate = sdf.format(now);
+		createDate = sdf.format(now);*/
+		createDate = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초").format(new Date());
 	}
 	public int getMoney() {
 		return money;

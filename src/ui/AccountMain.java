@@ -27,7 +27,6 @@ public class AccountMain {
 	enum AccountButt {
 		EXIT, ACCOUNT, MINUSAACCOUNT;
 	}
-
 	public static void main(String[] args) {
 		AccountButt[] buttons = { AccountButt.EXIT, AccountButt.ACCOUNT, AccountButt.MINUSAACCOUNT };
 		Account ac = null;
