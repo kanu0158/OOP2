@@ -65,14 +65,14 @@ public class Main {
 				JOptionPane.showMessageDialog(null, result);
 				break;
 			case INPUT_SALARY:
-				salaryTemp = new Salary();
+				/*salaryTemp = new Salary();
 				salaryTemp.setDept(JOptionPane.showInputDialog("부서"));
 				salaryTemp.setName(JOptionPane.showInputDialog("이름"));
 				salaryTemp.setSal(Integer.parseInt(JOptionPane.showInputDialog("본봉")));
 				salaryTemp.setBonus(Integer.parseInt(JOptionPane.showInputDialog("수당")));
 				salaryTemp.setSum();
 				salary[salaryCount++] = salaryTemp;
-				break;
+				break;*/
 			case OUTPUT_SALARY:
 				result = "";
 				for (int i = 0; i < salaryCount; i++) {

@@ -3,6 +3,8 @@ package domain;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.JOptionPane;
+
 public class Account {
 	public final static String BANK_NAME="비트뱅크";
 	public final static String ACCOUNT_TYPE="기본통장";
@@ -13,17 +15,21 @@ public class Account {
 	protected int money;// 잔액, 계좌 랜덤
 	protected String name,accountNo,uid,pass,accountType,createDate;//uid는 아이디 , createDate는 계좌생성일 블로그에서 오늘날짜 뽑는 로직 가져다쓰세요.
 	// 통장 123-345-678 의 형태가 되도록 코딩 math.random()이용해서
-	public Account() {
+	public Account(String name, String uid, String pass) {
 		setAccountType(ACCOUNT_TYPE);
 		setAccountNo();
 		setCreateDate();
+		this.name =name;
+		this.uid = uid;
+		this.pass = pass;
 	}
 	
 	public void setMoney(int money) {
 		this.money = money;
 	}
-	public void setName(String name) {
-		this.name = name;
+	
+	public void setWithdraw(int withdraw) {
+			this.money -= withdraw;
 	}
 	public void setAccountNo() {
 		String accountNo = "";
@@ -36,9 +42,7 @@ public class Account {
 		}
 		this.accountNo = accountNo;
 	}
-	public void setUId(String uid) {
-		this.uid = uid;
-	}
+	
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
