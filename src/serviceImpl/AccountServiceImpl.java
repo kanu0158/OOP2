@@ -4,10 +4,14 @@ import javax.swing.JOptionPane;
 import domain.Account;
 import service.AccountService; //비즈니스 로직
 public class AccountServiceImpl implements AccountService{
-	Account[] list = new Account[3]; // 주소값만 가져서 크기가 아무리 커져도 실제 크기는 주소값크기(4바이트)정도이다 
-	
+	Account[] list; // 주소값만 가져서 크기가 아무리 커져도 실제 크기는 주소값크기(4바이트)정도이다 
+	int count;
+	public AccountServiceImpl() {
+		list = new Account[10];
+		count = 0;
+	}
 	public void addList(Account account) {
-		list[0] = account;
+		list[count++] = account;
 	}
 	public Account[] list(){
 		return list;
@@ -49,8 +53,11 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public String showResult() {
-		// TODO Auto-generated method stub
-		return null;
+		String result = "";
+		for(int i=0;i<count;i++) {
+			result += list()[i].toString();
+		}
+		return result;
 	}
 
 

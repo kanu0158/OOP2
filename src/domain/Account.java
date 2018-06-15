@@ -27,7 +27,9 @@ public class Account {
 	public void setMoney(int money) {
 		this.money = money;
 	}
-	
+	public void setDeposit(int deposit) {
+		this.money += deposit;
+	}
 	public void setWithdraw(int withdraw) {
 			this.money -= withdraw;
 	}
